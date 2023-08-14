@@ -34,7 +34,7 @@ function shadeKeyBoard(letter, color) {
                 return;
             } 
 
-            if (oldColor === '#fefa95' && color !== green) {
+            if (oldColor === '#ffe438' && color !== green) {
                 return;
             }
 
@@ -91,7 +91,7 @@ function checkGuess () {
                 letterColor = green;
             } else {
                 // shade box yellow
-                letterColor = '#fefa95';
+                letterColor = '#ffe438';
             }
 
             rightGuess[letterPosition] = "#";
@@ -194,6 +194,13 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
     }
   
     document.dispatchEvent(new KeyboardEvent("keyup", { key: key }));
+});
+
+const darkModeSwitch = document.querySelector(".dark-mode-switch");
+
+darkModeSwitch.addEventListener("click", () => {
+  darkModeSwitch.classList.toggle("active");
+  document.body.classList.toggle("dark-mode");
 });
 
 initBoard();
